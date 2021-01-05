@@ -16,7 +16,7 @@ public class ShotPut extends Discipline {
     }
 
     @Override
-    public float getA() {
+    public Float getA() {
         if (isWomenTournament) {
             return  56.0211f;
         }
@@ -24,12 +24,12 @@ public class ShotPut extends Discipline {
     }
 
     @Override
-    public float getB() {
+    public Float getB() {
         return 1.5f;
     }
 
     @Override
-    public float getC() {
+    public Float getC() {
         return 1.05f;
     }
 

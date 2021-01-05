@@ -18,7 +18,7 @@ public class OutdoorHurdles extends Discipline {
     }
 
     @Override
-    public float getA() {
+    public Float getA() {
         if (isWomenTournament) {
             return 9.23076f;
         }
@@ -26,7 +26,7 @@ public class OutdoorHurdles extends Discipline {
     }
 
     @Override
-    public float getB() {
+    public Float getB() {
         if (isWomenTournament) {
             return  26.70f;
         }
@@ -34,7 +34,7 @@ public class OutdoorHurdles extends Discipline {
     }
 
     @Override
-    public float getC() {
+    public Float getC() {
         if (isWomenTournament) {
             return 1.835f;
         }

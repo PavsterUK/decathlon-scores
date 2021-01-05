@@ -16,7 +16,7 @@ public class HundredMeters extends Discipline {
     }
 
     @Override
-    public float getA() {
+    public Float getA() {
         if (isWomenTournament) {
             return 17.8570f;
         }
@@ -24,7 +24,7 @@ public class HundredMeters extends Discipline {
     }
 
     @Override
-    public float getB() {
+    public Float getB() {
         if (isWomenTournament) {
             return 21.0f;
         }
@@ -32,7 +32,7 @@ public class HundredMeters extends Discipline {
     }
 
     @Override
-    public float getC() {
+    public Float getC() {
         return 1.81f;
     }
 

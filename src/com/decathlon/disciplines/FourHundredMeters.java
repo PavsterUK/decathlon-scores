@@ -16,7 +16,7 @@ public class FourHundredMeters extends Discipline {
     }
 
     @Override
-    public float getA() {
+    public Float getA() {
         if (isWomenTournament) {
             return 1.34285f;
         }
@@ -24,7 +24,7 @@ public class FourHundredMeters extends Discipline {
     }
 
     @Override
-    public float getB() {
+    public Float getB() {
         if (isWomenTournament) {
             return 91.7f;
         }
@@ -32,7 +32,7 @@ public class FourHundredMeters extends Discipline {
     }
 
     @Override
-    public float getC() {
+    public Float getC() {
         if (isWomenTournament) {
             return 1.81f;
         }

@@ -16,7 +16,7 @@ public class LongJump extends Discipline {
     }
 
     @Override
-    public float getA() {
+    public Float getA() {
         if (isWomenTournament) {
             return 0.188807f;
         }
@@ -24,7 +24,7 @@ public class LongJump extends Discipline {
     }
 
     @Override
-    public float getB() {
+    public Float getB() {
         if (isWomenTournament) {
             return 210.00f;
         }
@@ -32,7 +32,7 @@ public class LongJump extends Discipline {
     }
 
     @Override
-    public float getC() {
+    public Float getC() {
         if (isWomenTournament) {
             return 1.41f;
         }

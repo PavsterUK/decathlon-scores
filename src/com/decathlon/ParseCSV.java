@@ -8,38 +8,33 @@ import java.util.List;
 
 public class ParseCSV {
 
-    //Read File into List<List<String>>
+    //Read file and save data line by line into List<List<String>>
     public static List<List<String>> getData(File inputFile)  {
-        List<List<String>> athletesData = new ArrayList<>();
+        List<List<String>> athletesCSVData = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(";");
-                athletesData.add(Arrays.asList(values));
+                athletesCSVData.add(Arrays.asList(values));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return athletesData;
+        return athletesCSVData;
     }
 
-    //Process athleteData into Obj<Athlete> list
-    public static List<Athlete> getAthletesList(List<List<String>> athletesData, boolean isWomenTournament){
+    //Process List<List<String>> into List<Athlete>
+    public static List<Athlete> getAthletesList(List<List<String>> athletesCSVData){
         List<Athlete> athleteList = new ArrayList<>();
-        for (List<String> singleAthleteData : athletesData){
-            String athletesName = "";
-            ArrayList<Float> athletesResults = new ArrayList<>();
-            for (int i = 0; i < singleAthleteData.size(); i++){
-                if (i == 0){
-                  athletesName = singleAthleteData.get(i);
-                } else {
-                  Float result = Float.parseFloat(singleAthleteData.get(i));
-                  athletesResults.add(i, result);
-                }
+        for (List<String> singleAthleteData : athletesCSVData){
+            String athleteName = singleAthleteData.get(0);
+            Float[] athleteResults = new Float[10];
+            for (int i = 1; i < singleAthleteData.size(); i++){
+                float result = Float.parseFloat(singleAthleteData.get(i));
+                athleteResults[i - 1] = result;
             }
-            athleteList.add(new Athlete(athletesName, isWomenTournament, athletesResults));
+            athleteList.add(new Athlete(athleteName, athleteResults));
         }
         return athleteList;
     }
-
 }

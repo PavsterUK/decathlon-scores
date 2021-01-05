@@ -16,7 +16,7 @@ public class HighJump extends Discipline {
     }
 
     @Override
-    public float getA() {
+    public Float getA() {
         if (isWomenTournament) {
             return 1.84523f;
         }
@@ -24,12 +24,12 @@ public class HighJump extends Discipline {
     }
 
     @Override
-    public float getB() {
+    public Float getB() {
         return 75f;
     }
 
     @Override
-    public float getC() {
+    public Float getC() {
         if (isWomenTournament) {
             return 1.348f;
         }

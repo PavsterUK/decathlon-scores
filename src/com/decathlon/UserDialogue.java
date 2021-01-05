@@ -3,9 +3,9 @@ package com.decathlon;
 import javax.swing.*;
 import java.io.File;
 
-public class PromptDialogue {
+public class UserDialogue {
 
-    public static File selectCSV(){
+    public static File promptChooseFile(){
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Select CSV File");
         int result = fileChooser.showOpenDialog(null);
@@ -15,7 +15,7 @@ public class PromptDialogue {
         return null;
     }
 
-    public static File saveAs(){
+    public static File promptSaveAs(){
         JFileChooser chooser = new JFileChooser();
         chooser.setDialogTitle("Specify a destination file");
         int userSelection = chooser.showSaveDialog(null);
