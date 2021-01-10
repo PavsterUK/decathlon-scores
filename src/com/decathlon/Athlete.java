@@ -1,6 +1,6 @@
 package com.decathlon;
 
-import java.util.ArrayList;
+
 
 public class Athlete {
 
@@ -12,7 +12,6 @@ public class Athlete {
         this.name = name;
         this.results = results;
     }
-
 
     public String getName() {
         return name;

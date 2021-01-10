@@ -1,4 +1,4 @@
-package com.decathlon;
+package com.decathlon.utils;
 
 import javax.swing.*;
 import java.io.File;
@@ -17,7 +17,7 @@ public class UserDialogue {
 
     public static File promptSaveAs(){
         JFileChooser chooser = new JFileChooser();
-        chooser.setDialogTitle("Specify a destination file");
+        chooser.setDialogTitle("Save results as");
         int userSelection = chooser.showSaveDialog(null);
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             return chooser.getSelectedFile();

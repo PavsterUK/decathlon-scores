@@ -4,12 +4,6 @@ import com.decathlon.Discipline;
 
 public class ShotPut extends Discipline {
 
-    private final boolean isWomenTournament;
-
-    public ShotPut(boolean womenTournament) {
-        this.isWomenTournament = womenTournament;
-    }
-
     @Override
     public String name() {
         return "Shot Put";
@@ -17,9 +11,6 @@ public class ShotPut extends Discipline {
 
     @Override
     public Float getA() {
-        if (isWomenTournament) {
-            return  56.0211f;
-        }
         return 51.39f;
     }
 

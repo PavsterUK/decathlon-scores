@@ -4,12 +4,6 @@ import com.decathlon.Discipline;
 
 public class LongJump extends Discipline {
 
-    private final boolean isWomenTournament;
-
-    public LongJump(boolean womenTournament) {
-        this.isWomenTournament = womenTournament;
-    }
-
     @Override
     public String name() {
         return "Long Jump";
@@ -17,25 +11,16 @@ public class LongJump extends Discipline {
 
     @Override
     public Float getA() {
-        if (isWomenTournament) {
-            return 0.188807f;
-        }
         return 0.14354f;
     }
 
     @Override
     public Float getB() {
-        if (isWomenTournament) {
-            return 210.00f;
-        }
         return 220f;
     }
 
     @Override
     public Float getC() {
-        if (isWomenTournament) {
-            return 1.41f;
-        }
         return 1.4f;
     }
 
