@@ -1,4 +1,4 @@
-package com.decathlon;
+package com.decathlon.disciplines;
 
 public abstract class Discipline {
 

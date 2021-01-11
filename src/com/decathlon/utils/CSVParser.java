@@ -60,14 +60,12 @@ public class CSVParser {
         List<Athlete> athleteList = new ArrayList<>();
         for (List<String> singleAthleteData : athletesCSVData){
             String athleteName = singleAthleteData.get(0);
-            Float[] athleteResults = new Float[10];
+            String[] athleteResults = new String[10];
             for (int i = 1; i < singleAthleteData.size(); i++){
-                float result = Float.parseFloat(singleAthleteData.get(i));
-                athleteResults[i - 1] = result;
+                athleteResults[i - 1] = singleAthleteData.get(i);
             }
             athleteList.add(new Athlete(athleteName, athleteResults));
         }
         return athleteList;
     }
-
 }

@@ -5,10 +5,10 @@ package com.decathlon;
 public class Athlete {
 
     private String name; //Athlete Name
-    private Float[] results; //Athlete results
+    private String[] results; //Athlete results
     private int totalScore; //Final total score
 
-    public Athlete(String name, Float[] results){
+    public Athlete(String name, String[] results){
         this.name = name;
         this.results = results;
     }
@@ -17,7 +17,7 @@ public class Athlete {
         return name;
     }
 
-    public Float[] getResults() {
+    public String[] getResults() {
         return results;
     }
 

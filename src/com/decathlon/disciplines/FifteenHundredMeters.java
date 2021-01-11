@@ -1,7 +1,5 @@
 package com.decathlon.disciplines;
 
-import com.decathlon.Discipline;
-
 public class FifteenHundredMeters extends Discipline {
 
     @Override

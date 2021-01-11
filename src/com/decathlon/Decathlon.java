@@ -1,25 +1,21 @@
 package com.decathlon;
 
 import com.decathlon.disciplines.*;
-import com.decathlon.utils.CSVParser;
+import com.decathlon.utils.PointCalculator;
 
-import java.io.File;
 import java.util.List;
 
 public class Decathlon {
 
-    private Discipline[] disciplineList = new Discipline[10];
+    private final Discipline[] disciplineList = new Discipline[10];
+    private final List<Athlete> athleteList;
 
-    public Decathlon(){
+    public Decathlon(List<Athlete> athleteList){
+        this.athleteList = athleteList;
         makeDisciplinesList();
     }
 
-    public List<Athlete> createAthleteList(File csvFile){
-        return CSVParser.getAthleteList(
-                CSVParser.getData(csvFile));
-    }
-
-    public void makeDisciplinesList(){
+    public final void makeDisciplinesList(){
         disciplineList[0] = new HundredMeters();
         disciplineList[1] = new LongJump();
         disciplineList[2] = new ShotPut();
@@ -32,8 +28,8 @@ public class Decathlon {
         disciplineList[9] = new FifteenHundredMeters();
     }
 
-
-
-
-
+    public void countPoints(){
+        PointCalculator pointCalc = new PointCalculator();
+        pointCalc.countPoints(athleteList, disciplineList);
+    }
 }
