@@ -1,17 +1,21 @@
-package com.decathlon.utils;
+package com.decathlon;
 
 import com.decathlon.Athlete;
 import com.decathlon.Decathlon;
+import com.decathlon.utils.CSVParser;
+import com.decathlon.utils.FileChooser;
+import com.decathlon.utils.XMLGenerator;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.util.List;
+import java.util.logging.XMLFormatter;
 
 public class MainWindow extends JFrame  {
 
     private File selectedCSVFile;
-    private File selectedOutputFile;
+    private String selectedOutputFile;
 
     public void open(){
         JFrame frame = new JFrame("Decathlon Points Calculator");
@@ -30,14 +34,14 @@ public class MainWindow extends JFrame  {
     private JButton inputFileButton(){
         JButton selectFileButton = new JButton("Select CSV file");
         selectFileButton.setBounds(50,20,120,30);
-        selectFileButton.addActionListener(ae -> selectedCSVFile = UserDialogue.promptChooseFile());
+        selectFileButton.addActionListener(ae -> selectedCSVFile = FileChooser.promptChooseFile());
         return selectFileButton;
     }
 
     private JButton outputFileButton(){
         JButton saveAsButton = new JButton("Save results as");
         saveAsButton.setBounds(220,20,125,30);
-        saveAsButton.addActionListener(ae -> selectedOutputFile = UserDialogue.promptSaveAs());
+        saveAsButton.addActionListener(ae -> selectedOutputFile = FileChooser.promptSaveAs());
         return saveAsButton;
     }
 
@@ -53,8 +57,8 @@ public class MainWindow extends JFrame  {
                         CSVParser.getData(selectedCSVFile));
                 Decathlon decathlon = new Decathlon(athleteList);
                 decathlon.countPoints();
-
-
+                String xml = XMLGenerator.generate(athleteList);
+                System.out.println(xml);
 
             }
         });

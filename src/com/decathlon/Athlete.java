@@ -4,9 +4,11 @@ package com.decathlon;
 
 public class Athlete {
 
-    private String name; //Athlete Name
-    private String[] results; //Athlete results
+    private final String name; //Athlete Name
+
+    private final String[] results; //Athlete results
     private int totalScore; //Final total score
+    private int place;
 
     public Athlete(String name, String[] results){
         this.name = name;
@@ -27,5 +29,9 @@ public class Athlete {
 
     public void setTotalScore(int score) {
         totalScore = score;
+    }
+
+    public int getPlace() {
+        return place;
     }
 }

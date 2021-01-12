@@ -3,7 +3,7 @@ package com.decathlon.utils;
 import javax.swing.*;
 import java.io.File;
 
-public class UserDialogue {
+public class FileChooser {
 
     public static File promptChooseFile(){
         JFileChooser fileChooser = new JFileChooser();
@@ -15,12 +15,17 @@ public class UserDialogue {
         return null;
     }
 
-    public static File promptSaveAs(){
+    public static String promptSaveAs(){
         JFileChooser chooser = new JFileChooser();
         chooser.setDialogTitle("Save results as");
         int userSelection = chooser.showSaveDialog(null);
         if (userSelection == JFileChooser.APPROVE_OPTION) {
-            return chooser.getSelectedFile();
+            String fileName = chooser.getSelectedFile().toString();
+            if (!fileName.endsWith(".xml")) {
+                fileName += ".xml";
+            }
+            System.out.println(fileName);
+            return fileName;
         }
         return null;
     }
