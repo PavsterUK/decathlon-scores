@@ -1,29 +1,30 @@
-package com.decathlon.disciplines;
+package com.decathlon.domain.disciplines;
 
-public class HundredMeters extends Discipline {
+public class DiscusThrow extends Discipline {
+
 
     @Override
     public String name() {
-        return "100m";
+        return "Discus Throw";
     }
 
     @Override
     public Float getA() {
-        return 25.4347f;
+        return 12.91f;
     }
 
     @Override
     public Float getB() {
-        return 18.0f;
+        return 4f;
     }
 
     @Override
     public Float getC() {
-        return 1.81f;
+        return 1.1f;
     }
 
     @Override
     public String evenType() {
-        return "Track";
+        return "Field";
     }
 }

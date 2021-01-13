@@ -1,14 +1,13 @@
-package com.decathlon;
+package com.decathlon.domain;
 
 
 
 public class Athlete {
 
     private final String name; //Athlete Name
-
     private final String[] results; //Athlete results
     private int totalScore; //Final total score
-    private int place;
+    private int place; //
 
     public Athlete(String name, String[] results){
         this.name = name;
@@ -34,4 +33,10 @@ public class Athlete {
     public int getPlace() {
         return place;
     }
+
+    public void setPlace(int place) {
+        this.place = place;
+    }
+
+
 }

@@ -1,13 +1,13 @@
 package com.decathlon.utils;
 
-import com.decathlon.Athlete;
-import com.decathlon.disciplines.Discipline;
+import com.decathlon.domain.Athlete;
+import com.decathlon.domain.disciplines.Discipline;
 
 import java.util.List;
 
 public class PointCalculator {
 
-    public void countPoints(List<Athlete> athleteList, Discipline[] disciplineList){
+    public static void countPoints(List<Athlete> athleteList, Discipline[] disciplineList){
         for (Athlete singleAthlete : athleteList) {
             String[] results = singleAthlete.getResults();
             int totalPoints = 0;
@@ -30,7 +30,7 @@ public class PointCalculator {
        Field event points formula = A×(D−B)^C
        Math.pow requires Double as an argument, hence A B C are Doubles
      */
-    private int pointCount(String result, String eventType, double A, double B, double C){
+    private static int pointCount(String result, String eventType, double A, double B, double C){
         int points = 0;
         if (eventType.equals("Track")){
             float seconds = getSeconds(result);
@@ -42,7 +42,7 @@ public class PointCalculator {
         return points;
     }
 
-    private Float getSeconds(String eventResult){
+    private static Float getSeconds(String eventResult){
         int firstDotIndex = eventResult.indexOf('.');
         int minutes = 0;
         float seconds = 0;

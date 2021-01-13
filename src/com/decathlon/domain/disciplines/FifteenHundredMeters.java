@@ -1,4 +1,4 @@
-package com.decathlon.disciplines;
+package com.decathlon.domain.disciplines;
 
 public class FifteenHundredMeters extends Discipline {
 

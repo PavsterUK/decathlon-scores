@@ -1,26 +1,25 @@
-package com.decathlon.disciplines;
+package com.decathlon.domain.disciplines;
 
-public class DiscusThrow extends Discipline {
-
+public class PoleVault extends Discipline {
 
     @Override
     public String name() {
-        return "Discus Throw";
+        return "Pole Vault";
     }
 
     @Override
     public Float getA() {
-        return 12.91f;
+        return 0.2797f;
     }
 
     @Override
     public Float getB() {
-        return 4f;
+        return 100f;
     }
 
     @Override
     public Float getC() {
-        return 1.1f;
+        return 1.35f;
     }
 
     @Override

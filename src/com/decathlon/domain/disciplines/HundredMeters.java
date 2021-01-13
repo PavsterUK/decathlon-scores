@@ -1,30 +1,29 @@
-package com.decathlon.disciplines;
+package com.decathlon.domain.disciplines;
 
-public class LongJump extends Discipline {
+public class HundredMeters extends Discipline {
 
     @Override
     public String name() {
-        return "Long Jump";
+        return "100m";
     }
 
     @Override
     public Float getA() {
-        return 0.14354f;
+        return 25.4347f;
     }
 
     @Override
     public Float getB() {
-        return 220f;
+        return 18.0f;
     }
 
     @Override
     public Float getC() {
-        return 1.4f;
+        return 1.81f;
     }
 
     @Override
     public String evenType() {
-        return "Field";
+        return "Track";
     }
-
 }

@@ -1,8 +1,11 @@
-package com.decathlon;
+package com.decathlon.domain;
 
-import com.decathlon.disciplines.*;
+import com.decathlon.domain.disciplines.*;
+import com.decathlon.utils.PlaceManager;
 import com.decathlon.utils.PointCalculator;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Decathlon {
@@ -13,6 +16,8 @@ public class Decathlon {
     public Decathlon(List<Athlete> athleteList){
         this.athleteList = athleteList;
         makeDisciplinesList();
+        countPoints();
+        arrangePlaces();
     }
 
     public final void makeDisciplinesList(){
@@ -29,7 +34,14 @@ public class Decathlon {
     }
 
     public void countPoints(){
-        PointCalculator pointCalc = new PointCalculator();
-        pointCalc.countPoints(athleteList, disciplineList);
+        PointCalculator.countPoints(athleteList, disciplineList);
+    }
+
+    public void arrangePlaces(){
+        PlaceManager.arrangePlaces(athleteList);
+    }
+
+    public List<Athlete> getAthleteList() {
+        return athleteList;
     }
 }

@@ -1,6 +1,6 @@
 package com.decathlon.utils;
 
-import com.decathlon.Athlete;
+import com.decathlon.domain.Athlete;
 
 import java.io.*;
 import java.util.ArrayList;

@@ -1,29 +1,29 @@
-package com.decathlon.disciplines;
+package com.decathlon.domain.disciplines;
 
-public class JavelinThrow extends Discipline {
+public class OutdoorHurdles extends Discipline {
 
     @Override
     public String name() {
-        return "Javelin Throw";
+        return "110m Hurdles";
     }
 
     @Override
     public Float getA() {
-        return 10.14f;
+        return 5.74352f;
     }
 
     @Override
     public Float getB() {
-        return 7f;
+        return 28.5f;
     }
 
     @Override
     public Float getC() {
-        return 1.08f;
+        return 1.92f;
     }
 
     @Override
     public String evenType() {
-        return "Field";
+        return "Track";
     }
 }

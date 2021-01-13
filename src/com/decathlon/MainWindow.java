@@ -1,16 +1,16 @@
 package com.decathlon;
 
-import com.decathlon.Athlete;
-import com.decathlon.Decathlon;
+import com.decathlon.domain.Athlete;
+import com.decathlon.domain.Decathlon;
 import com.decathlon.utils.CSVParser;
 import com.decathlon.utils.FileChooser;
+import com.decathlon.utils.OutputFileManager;
 import com.decathlon.utils.XMLGenerator;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.util.List;
-import java.util.logging.XMLFormatter;
+
 
 public class MainWindow extends JFrame  {
 
@@ -55,11 +55,9 @@ public class MainWindow extends JFrame  {
             } else {
                 List<Athlete> athleteList = CSVParser.getAthleteList(
                         CSVParser.getData(selectedCSVFile));
-                Decathlon decathlon = new Decathlon(athleteList);
-                decathlon.countPoints();
-                String xml = XMLGenerator.generate(athleteList);
-                System.out.println(xml);
-
+                Decathlon dec = new Decathlon(athleteList);
+                String xmlString = XMLGenerator.makeXMLString(dec.getAthleteList());
+                OutputFileManager.createXMLFile(xmlString, selectedOutputFile);
             }
         });
         return getResultsButton;

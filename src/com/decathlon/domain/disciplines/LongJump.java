@@ -1,29 +1,30 @@
-package com.decathlon.disciplines;
+package com.decathlon.domain.disciplines;
 
-public class PoleVault extends Discipline {
+public class LongJump extends Discipline {
 
     @Override
     public String name() {
-        return "Pole Vault";
+        return "Long Jump";
     }
 
     @Override
     public Float getA() {
-        return 0.2797f;
+        return 0.14354f;
     }
 
     @Override
     public Float getB() {
-        return 100f;
+        return 220f;
     }
 
     @Override
     public Float getC() {
-        return 1.35f;
+        return 1.4f;
     }
 
     @Override
     public String evenType() {
         return "Field";
     }
+
 }
