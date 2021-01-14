@@ -15,7 +15,7 @@ import java.util.List;
  *  Each new line of the file corresponds to new athlete's data. First
  *  value on each line is athletes name, followed by 10 decathlon results.
  *
- * @Autor Pavel Naumovich
+ * @Author Pavel Naumovich
  */
 
 

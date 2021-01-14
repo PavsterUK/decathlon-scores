@@ -9,7 +9,7 @@ public class OutputFileManager {
 
    public static void createXMLFile(String xmlString, String outputFile){
        File outputXML = new File(outputFile);
-       BufferedWriter bufferedWriter = null;
+       BufferedWriter bufferedWriter;
        try {
            bufferedWriter = new BufferedWriter(new FileWriter(outputXML));
            bufferedWriter.write(xmlString);

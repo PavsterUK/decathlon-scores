@@ -20,8 +20,6 @@ public class PointCalculator {
                 totalPoints += pointCount(singleResult, eventType, A, B, C);
             }
             singleAthlete.setTotalScore(totalPoints);
-            System.out.printf(singleAthlete.getName() + " -->");
-            System.out.println(singleAthlete.getTotalScore());
         }
     }
 
@@ -31,7 +29,7 @@ public class PointCalculator {
        Math.pow requires Double as an argument, hence A B C are Doubles
      */
     private static int pointCount(String result, String eventType, double A, double B, double C){
-        int points = 0;
+        int points;
         if (eventType.equals("Track")){
             float seconds = getSeconds(result);
             points = (int) Math.pow( A * (B - seconds), C);
@@ -45,7 +43,7 @@ public class PointCalculator {
     private static Float getSeconds(String eventResult){
         int firstDotIndex = eventResult.indexOf('.');
         int minutes = 0;
-        float seconds = 0;
+        float seconds;
         int numOfDots = eventResult.length() - eventResult.replace(".", "").length();
 
         if (numOfDots > 1){

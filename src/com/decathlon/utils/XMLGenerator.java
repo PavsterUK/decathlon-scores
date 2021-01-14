@@ -16,13 +16,11 @@ public class XMLGenerator {
     }
 
     private static String injectAthleteData(Athlete athlete){
-        String athleteXML = '\n' +
-                "<athlete>" + '\n' +
+        return "<athlete>" + '\n' +
                         "<place>" + athlete.getPlace() + "</place>" + '\n' +
                         "<name>" + athlete.getName() + "</name>" + '\n' +
                         "<totalScore>" + athlete.getTotalScore() + "</totalScore>" + '\n' +
                 "</athlete>" + '\n' + '\n';
-        return athleteXML;
     }
 }
 

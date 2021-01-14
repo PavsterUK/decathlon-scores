@@ -4,22 +4,22 @@ package com.decathlon.domain;
 
 public class Athlete {
 
-    private final String name; //Athlete Name
-    private final String[] results; //Athlete results
+    private final String NAME; //Athlete Name
+    private final String[] RESULTS; //Athlete results
     private int totalScore; //Final total score
-    private int place; //
+    private String place; //
 
     public Athlete(String name, String[] results){
-        this.name = name;
-        this.results = results;
+        this.NAME = name;
+        this.RESULTS = results;
     }
 
     public String getName() {
-        return name;
+        return NAME;
     }
 
     public String[] getResults() {
-        return results;
+        return RESULTS;
     }
 
     public int getTotalScore() {
@@ -30,13 +30,14 @@ public class Athlete {
         totalScore = score;
     }
 
-    public int getPlace() {
+    public String getPlace() {
         return place;
     }
 
-    public void setPlace(int place) {
+    public void setPlace(String place) {
         this.place = place;
     }
+
 
 
 }
