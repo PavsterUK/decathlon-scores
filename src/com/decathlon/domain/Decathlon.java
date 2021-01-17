@@ -4,8 +4,6 @@ import com.decathlon.domain.disciplines.*;
 import com.decathlon.utils.PlaceManager;
 import com.decathlon.utils.PointCalculator;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Decathlon {

@@ -58,6 +58,8 @@ public class MainWindow extends JFrame  {
                 Decathlon dec = new Decathlon(athleteList);
                 String xmlString = XMLGenerator.makeXMLString(dec.getAthleteList());
                 OutputFileManager.createXMLFile(xmlString, selectedOutputFile);
+                JOptionPane.showMessageDialog(
+                        null, "File processed successfully");
             }
         });
         return getResultsButton;

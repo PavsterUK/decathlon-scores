@@ -8,31 +8,32 @@ public class PlaceManager {
 
     public static void arrangePlaces(List<Athlete> athleteList){
         sortAthleteList(athleteList);
-        for (int i = 0; i < athleteList.size(); i++) {
+        for (int i = 0; i < athleteList.size();) {
             Athlete athlete = athleteList.get(i);
             int score = athlete.getTotalScore();
             int numOfSame = numSameScore(athleteList, score);
 
             if (numOfSame > 0){
                 sharePlaces(athleteList, numOfSame, i);
+                i += numOfSame + 1;
             }else {
-                athleteList.get(i).setPlace( i + 1 + "");
+                athleteList.get(i).setPlace( (i + 1) + "");
+                i++;
             }
         }
     }
 
     private static void sharePlaces(List<Athlete> athleteList, int numOfSame, int startIndex){
-        startIndex += 1; //Compensate +1 to avoid 0th place
-        String sharedPlaces = startIndex + "";
-        for (int i = startIndex + 1; i < startIndex + numOfSame; i++) {
-            sharedPlaces += " - " +  i;
+        int place = startIndex + 1;
+        StringBuilder sharedPlaces = new StringBuilder();
+        sharedPlaces.append(place);
+        for (int i = place; i < startIndex + numOfSame + 1; i++) {
+            sharedPlaces.append("-").append(i + 1);
         }
-        for (int i = startIndex - 1; i < startIndex + numOfSame; i++) {
-            if ( i > athleteList.size())break;
-            athleteList.get(i).setPlace(sharedPlaces);
+        for (int i = startIndex; i < startIndex + numOfSame + 1; i++) {
+            athleteList.get(i).setPlace(sharedPlaces.toString());
         }
     }
-
 
     //Check how many athletes have same score as argument
     private static int numSameScore(List<Athlete> athleteList, int score){
@@ -50,6 +51,5 @@ public class PlaceManager {
                 .comparingInt(Athlete::getTotalScore)
                 .reversed());
     }
-
 
 }
