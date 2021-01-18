@@ -7,12 +7,12 @@ import java.io.IOException;
 
 public class OutputFileManager {
 
-   public static void createXMLFile(String xmlString, String outputFile){
-       File outputXML = new File(outputFile);
+   public static void createXMLFile(String htmlString, String outputFile){
+       File outputHTML = new File(outputFile);
        BufferedWriter bufferedWriter;
        try {
-           bufferedWriter = new BufferedWriter(new FileWriter(outputXML));
-           bufferedWriter.write(xmlString);
+           bufferedWriter = new BufferedWriter(new FileWriter(outputHTML));
+           bufferedWriter.write(htmlString);
            bufferedWriter.close();
        } catch (IOException e) {
            e.printStackTrace();
