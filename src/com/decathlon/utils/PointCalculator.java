@@ -17,6 +17,14 @@ public class PointCalculator {
                 float B = disciplineList[i].getB();
                 float C = disciplineList[i].getC();
                 String singleResult = results[i];
+
+                System.out.println("=====================================");
+                System.out.println(singleAthlete.getName());
+                System.out.println(disciplineList[i].getName());
+                System.out.println(pointCount(singleResult, eventType, A, B, C));
+                System.out.println(singleResult);
+                System.out.println("=====================================");
+
                 totalPoints += pointCount(singleResult, eventType, A, B, C);
             }
             singleAthlete.setTotalScore(totalPoints);
@@ -32,7 +40,8 @@ public class PointCalculator {
         int points;
         if (eventType.equals("Track")){
             float seconds = getSeconds(result);
-            points = (int) Math.pow( A * (B - seconds), C);
+            double temp = Math.pow(B - seconds, C);
+            points = (int) (A * temp);
         } else{
             float meters = Float.parseFloat(result);
             points = (int) Math.pow( A * (meters - B), C);
@@ -55,5 +64,7 @@ public class PointCalculator {
 
         return minutes * 60 + seconds;
     }
+
+
 
 }

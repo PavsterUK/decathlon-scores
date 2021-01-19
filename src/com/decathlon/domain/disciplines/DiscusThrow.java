@@ -4,7 +4,7 @@ public class DiscusThrow extends Discipline {
 
 
     @Override
-    public String name() {
+    public String getName() {
         return "Discus Throw";
     }
 

@@ -3,7 +3,7 @@ package com.decathlon.domain.disciplines;
 public class FifteenHundredMeters extends Discipline {
 
     @Override
-    public String name() {
+    public String getName() {
         return "1500m";
     }
 

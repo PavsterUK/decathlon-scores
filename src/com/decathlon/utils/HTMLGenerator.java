@@ -17,14 +17,14 @@ public class HTMLGenerator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String athleteData = null;
+        StringBuilder athleteData = new StringBuilder("");
         for (Athlete athlete : athleteList){
-                athleteData += appendData(athlete);
+                athleteData.append(getData(athlete));
         }
-        return htmlString.replace("$addData", athleteData);
+        return htmlString.replace("$addData", athleteData.toString());
     }
 
-    private static String appendData(Athlete athlete){
+    private static String getData(Athlete athlete){
         return "<tr>" + '\n' +
                         "<td>" + athlete.getName() + "</td>" + '\n' +
                         "<td>" + athlete.getPlace() + "</td>" + '\n' +
