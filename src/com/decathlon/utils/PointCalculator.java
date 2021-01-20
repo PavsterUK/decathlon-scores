@@ -4,6 +4,7 @@ import com.decathlon.domain.Athlete;
 import com.decathlon.domain.disciplines.Discipline;
 
 import java.util.List;
+import java.util.Set;
 
 public class PointCalculator {
 
@@ -13,19 +14,20 @@ public class PointCalculator {
             int totalPoints = 0;
             for (int i = 0; i < results.length; i++) {
                 String eventType = disciplineList[i].evenType();
-                float A = disciplineList[i].getA();
-                float B = disciplineList[i].getB();
-                float C = disciplineList[i].getC();
+                Discipline discipline = disciplineList[i];
+                float A = discipline.getA();
+                float B = discipline.getB();
+                float C = discipline.getC();
                 String singleResult = results[i];
 
                 System.out.println("=====================================");
                 System.out.println(singleAthlete.getName());
                 System.out.println(disciplineList[i].getName());
-                System.out.println(pointCount(singleResult, eventType, A, B, C));
+                System.out.println(pointCount(singleResult, discipline, A, B, C));
                 System.out.println(singleResult);
                 System.out.println("=====================================");
 
-                totalPoints += pointCount(singleResult, eventType, A, B, C);
+                totalPoints += pointCount(singleResult, discipline, A, B, C);
             }
             singleAthlete.setTotalScore(totalPoints);
         }
@@ -36,15 +38,18 @@ public class PointCalculator {
        Field event points formula = A×(D−B)^C
        Math.pow requires Double as an argument, hence A B C are Doubles
      */
-    private static int pointCount(String result, String eventType, double A, double B, double C){
+    private static int pointCount(String result, Discipline discipline, double A, double B, double C){
         int points;
-        if (eventType.equals("Track")){
+        if (discipline.evenType().equals("Track")){
             float seconds = getSeconds(result);
-            double temp = Math.pow(B - seconds, C);
-            points = (int) (A * temp);
+            points = (int) ( A * (Math.pow(B - seconds, C)) );
         } else{
-            float meters = Float.parseFloat(result);
-            points = (int) Math.pow( A * (meters - B), C);
+            float centimeters = (Float.parseFloat(result) * 100);
+            Set<String> meterList = Set.of("Shot Put", "Discus Throw", "Javelin Throw");
+            if (meterList.contains(discipline.getName())){
+                centimeters /= 100;
+            }
+            points = (int) ( A * (Math.pow((centimeters - B), C)) );
         }
         return points;
     }
@@ -64,7 +69,6 @@ public class PointCalculator {
 
         return minutes * 60 + seconds;
     }
-
 
 
 }
