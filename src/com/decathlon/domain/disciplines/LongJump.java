@@ -1,5 +1,11 @@
 package com.decathlon.domain.disciplines;
 
+/**
+ * Represents "Long Jump" discipline
+ *
+ * In order to find documentation on all method within
+ * the class, please refer to abstract class.
+ */
 public class LongJump extends Discipline {
 
     @Override

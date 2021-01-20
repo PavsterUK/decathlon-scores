@@ -6,6 +6,10 @@ import com.decathlon.utils.PointCalculator;
 
 import java.util.List;
 
+/**
+ * Represents Decathlon tournament
+ *
+ */
 public class Decathlon {
 
     private final Discipline[] disciplineList = new Discipline[10];

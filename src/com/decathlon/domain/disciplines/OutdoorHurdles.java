@@ -1,5 +1,11 @@
 package com.decathlon.domain.disciplines;
 
+/**
+ * Represents "110-meter hurdle run " discipline
+ *
+ * In order to find documentation on all method within
+ * the class, please refer to abstract class.
+ */
 public class OutdoorHurdles extends Discipline {
 
     @Override

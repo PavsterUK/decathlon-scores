@@ -1,5 +1,11 @@
 package com.decathlon.domain.disciplines;
 
+/**
+ * Represents "1500-meter run" discipline
+ *
+ * In order to find documentation on all method within
+ * the class, please refer to abstract class.
+ */
 public class FifteenHundredMeters extends Discipline {
 
     @Override

@@ -19,14 +19,6 @@ public class PointCalculator {
                 float B = discipline.getB();
                 float C = discipline.getC();
                 String singleResult = results[i];
-
-                System.out.println("=====================================");
-                System.out.println(singleAthlete.getName());
-                System.out.println(disciplineList[i].getName());
-                System.out.println(pointCount(singleResult, discipline, A, B, C));
-                System.out.println(singleResult);
-                System.out.println("=====================================");
-
                 totalPoints += pointCount(singleResult, discipline, A, B, C);
             }
             singleAthlete.setTotalScore(totalPoints);

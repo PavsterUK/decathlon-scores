@@ -1,5 +1,12 @@
 package com.decathlon.domain.disciplines;
 
+/**
+ * Represents "Discus Throw" discipline
+ *
+ * In order to find documentation on all method within
+ * the class, please refer to abstract class.
+ */
+
 public class DiscusThrow extends Discipline {
 
 

@@ -1,5 +1,12 @@
 package com.decathlon.domain.disciplines;
 
+
+/**
+ * Represents "Shot Put" discipline
+ *
+ * In order to find documentation on all method within
+ * the class, please refer to abstract class.
+ */
 public class ShotPut extends Discipline {
 
     @Override
