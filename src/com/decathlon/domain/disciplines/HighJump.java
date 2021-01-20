@@ -3,7 +3,7 @@ package com.decathlon.domain.disciplines;
 public class HighJump extends Discipline {
 
     @Override
-    public String name() {
+    public String getName() {
         return "High Jump";
     }
 

@@ -3,7 +3,7 @@ package com.decathlon.domain.disciplines;
 public class JavelinThrow extends Discipline {
 
     @Override
-    public String name() {
+    public String getName() {
         return "Javelin Throw";
     }
 

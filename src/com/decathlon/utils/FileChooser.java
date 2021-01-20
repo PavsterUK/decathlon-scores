@@ -21,8 +21,8 @@ public class FileChooser {
         int userSelection = chooser.showSaveDialog(null);
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             String fileName = chooser.getSelectedFile().toString();
-            if (!fileName.endsWith(".xml")) {
-                fileName += ".xml";
+            if (!fileName.endsWith(".html")) {
+                fileName += ".html";
             }
             System.out.println(fileName);
             return fileName;

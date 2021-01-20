@@ -3,7 +3,7 @@ package com.decathlon.domain.disciplines;
 public class PoleVault extends Discipline {
 
     @Override
-    public String name() {
+    public String getName() {
         return "Pole Vault";
     }
 

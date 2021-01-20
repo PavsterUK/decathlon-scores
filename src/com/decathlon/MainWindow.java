@@ -5,7 +5,7 @@ import com.decathlon.domain.Decathlon;
 import com.decathlon.utils.CSVParser;
 import com.decathlon.utils.FileChooser;
 import com.decathlon.utils.OutputFileManager;
-import com.decathlon.utils.XMLGenerator;
+import com.decathlon.utils.HTMLGenerator;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
@@ -56,8 +56,8 @@ public class MainWindow extends JFrame  {
                 List<Athlete> athleteList = CSVParser.getAthleteList(
                         CSVParser.getData(selectedCSVFile));
                 Decathlon dec = new Decathlon(athleteList);
-                String xmlString = XMLGenerator.makeXMLString(dec.getAthleteList());
-                OutputFileManager.createXMLFile(xmlString, selectedOutputFile);
+                String htmlString = HTMLGenerator.makeHTMLString(dec.getAthleteList());
+                OutputFileManager.createXMLFile(htmlString, selectedOutputFile);
                 JOptionPane.showMessageDialog(
                         null, "File processed successfully");
             }
