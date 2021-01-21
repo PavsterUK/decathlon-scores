@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class OutputFileManager {
 
-   public static void createXMLFile(String htmlString, String outputFile){
+   public static void createHTMLFile(String htmlString, String outputFile){
        File outputHTML = new File(outputFile);
        BufferedWriter bufferedWriter;
        try {

@@ -2,18 +2,21 @@ package com.decathlon.domain;
 
 
 /**
- *Represents an athlete.
+ * Represents an athlete.
  */
 
 public class Athlete {
 
-    private final String NAME; //Athlete's Name
+    private final String NAME; //Athlete's full Name.
     private final String[] RESULTS; //Athlete's results parsed from CSV file, each result as separate string.
     private int totalScore; //Combined scores for every discipline.
     private String place; //Athlete's place on competition.
 
     /**
      * Constructor
+     *
+     * @param results Athlete's results parsed from CSV file, each result as separate string.
+     * @param name Athlete's full name.
      */
     public Athlete(String name, String[] results){
         this.NAME = name;

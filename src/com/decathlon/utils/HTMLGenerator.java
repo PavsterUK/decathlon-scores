@@ -8,8 +8,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * Utility class used to generate HTML String.
+ */
+
 public class HTMLGenerator {
 
+    /**
+     * Used to generate HTML
+     * @param athleteList is list of athletes after comp
+     * @return
+     */
     public static String makeHTMLString(List<Athlete> athleteList){
         String htmlString = null;
         try {

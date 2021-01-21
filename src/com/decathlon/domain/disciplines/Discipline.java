@@ -1,7 +1,7 @@
 package com.decathlon.domain.disciplines;
 
 /**
- * Abstract Class representing sport discipline
+ * Abstract base Class representing sport discipline.
  */
 public abstract class Discipline {
 

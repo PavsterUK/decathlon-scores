@@ -56,8 +56,9 @@ public class MainWindow extends JFrame  {
                 List<Athlete> athleteList = CSVParser.getAthleteList(
                         CSVParser.getData(selectedCSVFile));
                 Decathlon dec = new Decathlon(athleteList);
-                String htmlString = HTMLGenerator.makeHTMLString(dec.getAthleteList());
-                OutputFileManager.createXMLFile(htmlString, selectedOutputFile);
+                dec.initialize();
+                String htmlString = HTMLGenerator.makeHTMLString(dec.getATHLETE_LIST());
+                OutputFileManager.createHTMLFile(htmlString, selectedOutputFile);
                 JOptionPane.showMessageDialog(
                         null, "File processed successfully");
             }
