@@ -1,25 +1,31 @@
 package com.decathlon.domain.disciplines;
 
-public class PoleVault extends Discipline {
+/**
+ * Represents "Javelin Throw" discipline
+ *
+ * In order to find documentation on all method within
+ * the class, please refer to abstract class.
+ */
+public class JavelinThrow extends Discipline {
 
     @Override
     public String getName() {
-        return "Pole Vault";
+        return "Javelin Throw";
     }
 
     @Override
     public Float getA() {
-        return 0.2797f;
+        return 10.14f;
     }
 
     @Override
     public Float getB() {
-        return 100f;
+        return 7f;
     }
 
     @Override
     public Float getC() {
-        return 1.35f;
+        return 1.08f;
     }
 
     @Override

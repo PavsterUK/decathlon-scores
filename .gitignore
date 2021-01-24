@@ -1,2 +1,8 @@
 /out
-.idea
+./idea/
+/.gradle/
+/gradle
+/gradlew
+/gradlew.bat
+/settings.gradle
+

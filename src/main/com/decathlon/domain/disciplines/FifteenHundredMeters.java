@@ -1,25 +1,31 @@
 package com.decathlon.domain.disciplines;
 
-public class HundredMeters extends Discipline {
+/**
+ * Represents "1500-meter run" discipline
+ *
+ * In order to find documentation on all method within
+ * the class, please refer to abstract class.
+ */
+public class FifteenHundredMeters extends Discipline {
 
     @Override
     public String getName() {
-        return "100m";
+        return "1500m";
     }
 
     @Override
     public Float getA() {
-        return 25.4347f;
+        return 0.03768f;
     }
 
     @Override
     public Float getB() {
-        return 18.0f;
+        return 480f;
     }
 
     @Override
     public Float getC() {
-        return 1.81f;
+        return 1.85f;
     }
 
     @Override

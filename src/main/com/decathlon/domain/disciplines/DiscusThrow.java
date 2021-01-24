@@ -1,30 +1,37 @@
 package com.decathlon.domain.disciplines;
 
-public class ShotPut extends Discipline {
+/**
+ * Represents "Discus Throw" discipline
+ *
+ * In order to find documentation on all method within
+ * the class, please refer to abstract class.
+ */
+
+public class DiscusThrow extends Discipline {
+
 
     @Override
     public String getName() {
-        return "Shot Put";
+        return "Discus Throw";
     }
 
     @Override
     public Float getA() {
-        return 51.39f;
+        return 12.91f;
     }
 
     @Override
     public Float getB() {
-        return 1.5f;
+        return 4f;
     }
 
     @Override
     public Float getC() {
-        return 1.05f;
+        return 1.1f;
     }
 
     @Override
     public String evenType() {
         return "Field";
     }
-
 }

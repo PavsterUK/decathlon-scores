@@ -1,30 +1,35 @@
 package com.decathlon.domain.disciplines;
 
-public class LongJump extends Discipline {
+/**
+ * Represents "Pole Vault" discipline
+ *
+ * In order to find documentation on all method within
+ * the class, please refer to abstract class.
+ */
+public class PoleVault extends Discipline {
 
     @Override
     public String getName() {
-        return "Long Jump";
+        return "Pole Vault";
     }
 
     @Override
     public Float getA() {
-        return 0.14354f;
+        return 0.2797f;
     }
 
     @Override
     public Float getB() {
-        return 220f;
+        return 100f;
     }
 
     @Override
     public Float getC() {
-        return 1.4f;
+        return 1.35f;
     }
 
     @Override
     public String evenType() {
         return "Field";
     }
-
 }

@@ -1,29 +1,36 @@
 package com.decathlon.domain.disciplines;
 
-public class JavelinThrow extends Discipline {
+/**
+ * Represents "Long Jump" discipline
+ *
+ * In order to find documentation on all method within
+ * the class, please refer to abstract class.
+ */
+public class LongJump extends Discipline {
 
     @Override
     public String getName() {
-        return "Javelin Throw";
+        return "Long Jump";
     }
 
     @Override
     public Float getA() {
-        return 10.14f;
+        return 0.14354f;
     }
 
     @Override
     public Float getB() {
-        return 7f;
+        return 220f;
     }
 
     @Override
     public Float getC() {
-        return 1.08f;
+        return 1.4f;
     }
 
     @Override
     public String evenType() {
         return "Field";
     }
+
 }
