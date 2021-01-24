@@ -3,8 +3,10 @@ package com.decathlon.utils;
 import com.decathlon.domain.Athlete;
 import com.decathlon.domain.disciplines.Discipline;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class PointCalculator {
 
@@ -26,8 +28,8 @@ public class PointCalculator {
     }
 
     /*
-       Track event points formula = A×(B−T)^C
-       Field event points formula = A×(D−B)^C
+       Track event points formula = A * (B - T)^C
+       Field event points formula = A * (D - B)^C
        Math.pow requires Double as an argument, hence A B C are Doubles
      */
     private static int pointCount(String result, Discipline discipline, double A, double B, double C){
@@ -37,7 +39,8 @@ public class PointCalculator {
             points = (int) ( A * (Math.pow(B - seconds, C)) );
         } else{
             float centimeters = (Float.parseFloat(result) * 100);
-            Set<String> meterList = Set.of("Shot Put", "Discus Throw", "Javelin Throw");
+            List<String> aList = Arrays.asList ("Shot Put", "Discus Throw", "Javelin Throw");
+            Set<String> meterList = aList.stream().collect(Collectors.toSet());
             if (meterList.contains(discipline.getName())){
                 centimeters /= 100;
             }

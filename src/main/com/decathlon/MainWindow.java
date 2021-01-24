@@ -4,7 +4,6 @@ import com.decathlon.domain.Athlete;
 import com.decathlon.domain.Decathlon;
 import com.decathlon.utils.CSVParser;
 import com.decathlon.utils.FileChooser;
-import com.decathlon.utils.OutputFileManager;
 import com.decathlon.utils.HTMLGenerator;
 import javax.swing.*;
 import java.awt.*;
@@ -58,7 +57,7 @@ public class MainWindow extends JFrame  {
                 Decathlon dec = new Decathlon(athleteList);
                 dec.initialize();
                 String htmlString = HTMLGenerator.makeHTMLString(dec.getATHLETE_LIST());
-                OutputFileManager.createHTMLFile(htmlString, selectedOutputFile);
+                HTMLGenerator.createHTMLFile(htmlString, selectedOutputFile);
                 JOptionPane.showMessageDialog(
                         null, "File processed successfully");
             }

@@ -26,7 +26,7 @@ public class Decathlon {
     /**
      * Constructor.
      *
-     * @param athleteList list of athletes participating
+     * @param athleteList [List<Athlete>]list of athletes participating
      * in Decathlon.
      *
      * makeDisciplinesList() method populates DISCIPLINES_LIST field
@@ -77,7 +77,7 @@ public class Decathlon {
 
     /**
      * Uses utility class PlaceManager to arrange places for each
-     * athlete in ATHLETE_LIST.
+     * athlete in ATHLETE_LIST field.
      */
     private void arrangePlaces(){
         PlaceManager.arrangePlaces(ATHLETE_LIST);
