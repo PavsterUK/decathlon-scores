@@ -5,19 +5,19 @@ import java.io.File;
 
 
 /**
- * Utility class used to prompt user dialog
- * window for selecting file containing
- * athletes data for processing.
+ * Utility class to prompt user dialog
+ * for selecting file.
  *
  * It also used to select output file name and directory.
  */
 public class FileChooser {
 
     /**
-     * Prompts dialog to select target file.
+     * Prompts dialog to select CSV file.
      *
-     * @return user selected file.
-     * In case if none selected , return null
+     * @return [File] User selected file.
+     *
+     * Returns null if no file selected.
      */
     public static File promptChooseFile(){
         JFileChooser fileChooser = new JFileChooser();
@@ -32,11 +32,14 @@ public class FileChooser {
     /**
      * Prompts dialogue to let user select output
      * destination and file name. NOTE file must be
-     * in html format. Any other extension will be
-     * overwritten to .html.
+     * in .html extension. Any other extensions will be
+     * overridden to .html.
      *
-     * @return absolute path of output file as String.
+     * @return [String] Absolute path of output file.
+     *
+     * Returns null if no file selected.
      */
+
     public static String promptSaveAs(){
         JFileChooser chooser = new JFileChooser();
         chooser.setDialogTitle("Save results as");

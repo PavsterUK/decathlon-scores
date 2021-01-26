@@ -9,7 +9,7 @@ public abstract class Discipline {
      * This method must be implemented to return a
      * name of sport discipline in concrete class.
      *
-     * @return name of sport discipline as String
+     * @return [String] name of sport discipline
      */
     public abstract String getName();
 
@@ -18,7 +18,7 @@ public abstract class Discipline {
      * return "A" parameter for discipline
      * implemented in concrete class
      *
-     * @return float "A" parameter.
+     * @return [float] "A" parameter.
      */
     public abstract Float getA(); //Return "A" parameter for concrete discipline class
 
@@ -27,7 +27,7 @@ public abstract class Discipline {
      * return "B" parameter for discipline
      * implemented in concrete class
      *
-     * @return float "B" parameter.
+     * @return [float] "B" parameter.
      */
     public abstract Float getB(); //Return "B" parameter for concrete discipline class
 
@@ -36,7 +36,7 @@ public abstract class Discipline {
      * return "C" parameter for discipline
      * implemented in concrete class
      *
-     * @return float "C" parameter.
+     * @return [float] "C" parameter.
      */
     public abstract Float getC(); //Return "C" parameter for concrete discipline class
 
@@ -46,7 +46,7 @@ public abstract class Discipline {
      * depending on discipline implemented
      * in concrete class.
      *
-     * @return event type as String
+     * @return [String] event type
      */
     public abstract String evenType(); //Return one of two event types, "Field" or "Track"
 

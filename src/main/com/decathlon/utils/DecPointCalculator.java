@@ -8,14 +8,16 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class PointCalculator {
+/**
+ *
+ */
+public class DecPointCalculator {
 
     public static void countPoints(List<Athlete> athleteList, Discipline[] disciplineList){
         for (Athlete singleAthlete : athleteList) {
             String[] results = singleAthlete.getResults();
             int totalPoints = 0;
             for (int i = 0; i < results.length; i++) {
-                String eventType = disciplineList[i].evenType();
                 Discipline discipline = disciplineList[i];
                 float A = discipline.getA();
                 float B = discipline.getB();

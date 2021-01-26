@@ -3,8 +3,8 @@ package com.decathlon.domain.disciplines;
 /**
  * Represents "High Jump" discipline
  *
- * In order to find documentation on all method within
- * the class, please refer to abstract class.
+ * To find documentation on all methods,
+ * please refer to abstract class.
  */
 public class HighJump extends Discipline {
 

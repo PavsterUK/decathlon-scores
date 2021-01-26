@@ -3,8 +3,6 @@ package com.decathlon.utils;
 import com.decathlon.domain.Athlete;
 
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -22,17 +20,15 @@ public class HTMLGenerator {
 
     /**
      * Generates html format table populated with
-     * data from List<Athlete>.
-     * @param athleteList List of Athlete objects must have
-     *                    set fields
+     * athlete place, score, name.
+     * @param athleteList [List<Athlete>] List of Athlete objects
      *
+     * Throws IOException if template.html not found.
      *
-     *
-     * @return populated HTML table with athletes results as String
+     * @return [String] HTML table, containing athlete results.
      */
     public static String makeHTMLString(List<Athlete> athleteList){
-        String htmlTempl = null;
-        Charset charset = StandardCharsets.ISO_8859_1;
+        String htmlTempl = "";
         try {
             htmlTempl = new String(Files.readAllBytes( Paths.get("src/main/com/decathlon/utils/template.html")));
         } catch (IOException e) {
@@ -40,12 +36,21 @@ public class HTMLGenerator {
         }
         StringBuilder athleteData = new StringBuilder("");
         for (Athlete athlete : athleteList){
-                athleteData.append(getData(athlete));
+                athleteData.append(getTableRow(athlete));
         }
         return htmlTempl.replace("$addData", athleteData.toString());
     }
 
-    private static String getData(Athlete athlete){
+    /**
+     * Helper method to get information from passed
+     * argument and generate HTML column using that
+     * information.
+     *
+     * @param athlete [Athlete] Athlete
+     * @return [String] HTML column containing
+     * Athletes Name, Place, TotalScore
+     */
+    private static String getTableRow(Athlete athlete){
         return "<tr>" + '\n' +
                         "<td>" + athlete.getName() + "</td>" + '\n' +
                         "<td>" + athlete.getPlace() + "</td>" + '\n' +
@@ -53,6 +58,13 @@ public class HTMLGenerator {
                 "</tr>" + '\n' + '\n';
     }
 
+    /**
+     * Creates .html extension file.
+     *
+     * @param htmlString [String] Contents to go inside .html file.
+     * @param outputFile [String] Absolute path of file to be created.
+     *
+     */
     public static void createHTMLFile(String htmlString, String outputFile){
         File outputHTML = new File(outputFile);
         BufferedWriter bufferedWriter;
@@ -63,6 +75,7 @@ public class HTMLGenerator {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }
 
