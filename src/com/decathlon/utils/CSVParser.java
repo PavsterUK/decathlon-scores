@@ -11,7 +11,7 @@ import java.util.List;
  *  Utility class used to parse csv file and
  *  create List<Athlete>. CSV file values must
  *  be separated by a semicolon. In case when values are separated
- *  by some other punctuation mark, alter @getDataList method accordingly.
+ *  by some other punctuation mark, alter @parseCSV method accordingly.
  *  Each line of CSV file must correspond to separate athlete's data. First
  *  value on each line is athletes name, followed by 10 decathlon results.
  */
@@ -28,13 +28,16 @@ public class CSVParser {
      *
      * @param inputFile [File] CSV file
      *
-     * @return [List<List<String>>] holding separate athlete data.
+     * @return [List<List<String>>] Two-dimensional arraylist, where every
+     *                              List<String> holds individual athletes' data.
      */
-    public static List<List<String>> getDataList(File inputFile)  {
+    public static List<List<String>> parseCSV(File inputFile)  {
         List<List<String>> athleteCSVData = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
             String line;
             while ((line = br.readLine()) != null) {
+                if (line.isEmpty())
+                    continue;
                 String[] values = line.split(";");
                 athleteCSVData.add(Arrays.asList(values));
             }

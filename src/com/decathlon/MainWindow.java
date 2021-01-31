@@ -85,7 +85,7 @@ public class MainWindow extends JFrame  {
                         null, "Select Input/Output Files");
             } else {
                 List<Athlete> athleteList = CSVParser.getAthleteList(
-                        CSVParser.getDataList(selectedCSVFile));
+                        CSVParser.parseCSV(selectedCSVFile));
                 Decathlon dec = new Decathlon(athleteList);
                 dec.initialize();
                 String htmlString = HTMLGenerator.makeHTMLString(dec.getATHLETE_LIST());

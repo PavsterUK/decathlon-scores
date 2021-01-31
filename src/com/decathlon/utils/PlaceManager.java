@@ -15,9 +15,9 @@ public class PlaceManager {
 
     /**
      * Sort list in descending order based on athletes
-     * total score. Then check if any of athletes
-     * have identical scores. Share places between
-     * same score athletes.
+     * total score. Arrange places based on total scores,
+     * check if any of athletes have identical scores.
+     * Share places between same score athletes.
      *
      * @param athleteList [List<Athlete>] Athlete list.
      */
