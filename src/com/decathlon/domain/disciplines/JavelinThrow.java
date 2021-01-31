@@ -1,31 +1,31 @@
 package com.decathlon.domain.disciplines;
 
 /**
- * Represents "High Jump" discipline
+ * Represents "Javelin Throw" discipline
  *
- * In order to find documentation on all method within
- * the class, please refer to abstract class.
+ * To find documentation on all methods,
+ * please refer to abstract class.
  */
-public class HighJump extends Discipline {
+public class JavelinThrow extends Discipline {
 
     @Override
     public String getName() {
-        return "High Jump";
+        return "Javelin Throw";
     }
 
     @Override
     public Float getA() {
-        return 0.8465f;
+        return 10.14f;
     }
 
     @Override
     public Float getB() {
-        return 75f;
+        return 7f;
     }
 
     @Override
     public Float getC() {
-        return 1.42f;
+        return 1.08f;
     }
 
     @Override

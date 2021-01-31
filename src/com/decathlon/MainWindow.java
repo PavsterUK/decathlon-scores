@@ -10,12 +10,19 @@ import java.awt.*;
 import java.io.File;
 import java.util.List;
 
+/**
+ * Main GUI Window with buttons and
+ * event listeners.
+ */
 
 public class MainWindow extends JFrame  {
 
     private File selectedCSVFile;
     private String selectedOutputFile;
 
+    /**
+     * Create Frame, put together all elements and display.
+     */
     public void open(){
         JFrame frame = new JFrame("Decathlon Points Calculator");
         frame.add(inputFileButton());
@@ -30,6 +37,13 @@ public class MainWindow extends JFrame  {
         frame.setVisible(true);
     }
 
+    /**
+     * Button "Select CSV file".
+     * Contains event listener, activates @FileChooser.promptChooseFile().
+     * Selected result stored in @selectedCSVFile field.
+     *
+     * @return [JButton]
+     */
     private JButton inputFileButton(){
         JButton selectFileButton = new JButton("Select CSV file");
         selectFileButton.setBounds(50,20,120,30);
@@ -37,6 +51,13 @@ public class MainWindow extends JFrame  {
         return selectFileButton;
     }
 
+    /**
+     * Button "Save results as".
+     * Contains event listener, activates @FileChooser.promptSaveAs()
+     * Selected result stored in @selectedOutputFile field.
+     *
+     * @return [JButton]
+     */
     private JButton outputFileButton(){
         JButton saveAsButton = new JButton("Save results as");
         saveAsButton.setBounds(220,20,125,30);
@@ -44,6 +65,17 @@ public class MainWindow extends JFrame  {
         return saveAsButton;
     }
 
+    /**
+     * Button "Get Results".
+     * Contains event listener.
+     *
+     * Checks if input/output files selected, if so
+     * proceeds with calculation and shows confirmation
+     * message, otherwise prompts message asking to
+     * select required files.
+     *
+     * @return [JButton]
+     */
     private JButton getResultsButton(){
         JButton getResultsButton = new JButton("Get Results");
         getResultsButton.setBounds(120,70,150,30);
@@ -53,7 +85,7 @@ public class MainWindow extends JFrame  {
                         null, "Select Input/Output Files");
             } else {
                 List<Athlete> athleteList = CSVParser.getAthleteList(
-                        CSVParser.getData(selectedCSVFile));
+                        CSVParser.parseCSV(selectedCSVFile));
                 Decathlon dec = new Decathlon(athleteList);
                 dec.initialize();
                 String htmlString = HTMLGenerator.makeHTMLString(dec.getATHLETE_LIST());

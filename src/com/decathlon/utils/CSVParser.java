@@ -11,7 +11,7 @@ import java.util.List;
  *  Utility class used to parse csv file and
  *  create List<Athlete>. CSV file values must
  *  be separated by a semicolon. In case when values are separated
- *  by some other punctuation mark, alter @getData method accordingly.
+ *  by some other punctuation mark, alter @parseCSV method accordingly.
  *  Each line of CSV file must correspond to separate athlete's data. First
  *  value on each line is athletes name, followed by 10 decathlon results.
  */
@@ -24,15 +24,20 @@ public class CSVParser {
      * line should correspond to separate athlete's data, results will be parsed into
      * two-dimensional ArrayList.
      *
-     * @param inputFile This is csv file
+     * Throws IOException if file is not found.
      *
-     * @return two-dimensional ArrayList, holding separate athlete data.
+     * @param inputFile [File] CSV file
+     *
+     * @return [List<List<String>>] Two-dimensional arraylist, where every
+     *                              List<String> holds individual athletes' data.
      */
-    public static List<List<String>> getData(File inputFile)  {
+    public static List<List<String>> parseCSV(File inputFile)  {
         List<List<String>> athleteCSVData = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(inputFile))) {
             String line;
             while ((line = br.readLine()) != null) {
+                if (line.isEmpty())
+                    continue;
                 String[] values = line.split(";");
                 athleteCSVData.add(Arrays.asList(values));
             }
@@ -47,12 +52,11 @@ public class CSVParser {
      * It takes a two-dimensional ArrayList as a parameter, where
      * each nested arraylist must correspond to unique athlete's data.
      *
-     * @param athletesCSVData This has to be two-dimensional ArrayList where
-     *                        each nested ArrayList hold separate athlete's
-     *                        data.
+     * @param athletesCSVData [List<List<String>>] Where ach nested
+     *                        ArrayList hold separate athlete's data.
      *
      *
-     * @return Arraylist of Athlete type objects.
+     * @return [List<Athlete>] Arraylist of Athlete type objects.
      */
     public static List<Athlete> getAthleteList(List<List<String>> athletesCSVData){
         List<Athlete> athleteList = new ArrayList<>();

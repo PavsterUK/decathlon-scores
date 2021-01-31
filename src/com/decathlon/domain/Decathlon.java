@@ -2,7 +2,7 @@ package com.decathlon.domain;
 
 import com.decathlon.domain.disciplines.*;
 import com.decathlon.utils.PlaceManager;
-import com.decathlon.utils.PointCalculator;
+import com.decathlon.utils.DecPointCalculator;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * in a constructor, representing competing athletes
  * in given tournament.
  *
- * By calling @initialize method, it will
+ * Calling @initialize method, it will
  * calculate scores for each individual athlete
  * and assign places according to their
  * scores.
@@ -72,7 +72,7 @@ public class Decathlon {
      * for each athlete.
      */
     private void countPoints(){
-        PointCalculator.countPoints(ATHLETE_LIST, DISCIPLINES_LIST);
+        DecPointCalculator.countPoints(ATHLETE_LIST, DISCIPLINES_LIST);
     }
 
     /**
@@ -84,7 +84,6 @@ public class Decathlon {
     }
 
     /**
-     *
      * Returns ATHLETE_LIST field variable.
      */
     public List<Athlete> getATHLETE_LIST() {

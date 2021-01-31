@@ -1,31 +1,31 @@
 package com.decathlon.domain.disciplines;
 
 /**
- * Represents "100-meter run" discipline
+ * Represents "110-meter hurdle run " discipline
  *
- * In order to find documentation on all method within
- * the class, please refer to abstract class.
+ * To find documentation on all methods,
+ * please refer to abstract class.
  */
-public class HundredMeters extends Discipline {
+public class OutdoorHurdles extends Discipline {
 
     @Override
     public String getName() {
-        return "100m";
+        return "110m Hurdles";
     }
 
     @Override
     public Float getA() {
-        return 25.4347f;
+        return 5.74352f;
     }
 
     @Override
     public Float getB() {
-        return 18.0f;
+        return 28.5f;
     }
 
     @Override
     public Float getC() {
-        return 1.81f;
+        return 1.92f;
     }
 
     @Override

@@ -4,18 +4,20 @@ import com.decathlon.domain.Athlete;
 import com.decathlon.domain.disciplines.Discipline;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
-public class PointCalculator {
+/**
+ *
+ */
+public class DecPointCalculator {
 
     public static void countPoints(List<Athlete> athleteList, Discipline[] disciplineList){
         for (Athlete singleAthlete : athleteList) {
             String[] results = singleAthlete.getResults();
             int totalPoints = 0;
             for (int i = 0; i < results.length; i++) {
-                String eventType = disciplineList[i].evenType();
                 Discipline discipline = disciplineList[i];
                 float A = discipline.getA();
                 float B = discipline.getB();
@@ -40,7 +42,7 @@ public class PointCalculator {
         } else{
             float centimeters = (Float.parseFloat(result) * 100);
             List<String> aList = Arrays.asList ("Shot Put", "Discus Throw", "Javelin Throw");
-            Set<String> meterList = aList.stream().collect(Collectors.toSet());
+            Set<String> meterList = new HashSet<>(aList);
             if (meterList.contains(discipline.getName())){
                 centimeters /= 100;
             }
