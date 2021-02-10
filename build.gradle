@@ -9,12 +9,11 @@ repositories {
     mavenCentral()
 }
 
-sourceSets.main.java.srcDirs = ['src']
-
 dependencies {
-    compile 'org.junit.jupiter:junit-jupiter:5.6.3'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
-test{
+test {
     useJUnitPlatform()
 }
