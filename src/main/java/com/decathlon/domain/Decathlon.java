@@ -4,6 +4,7 @@ import com.decathlon.domain.disciplines.*;
 import com.decathlon.utils.PlaceManager;
 import com.decathlon.utils.DecPointCalculator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ import java.util.List;
 public class Decathlon {
 
     // List of disciplines in Decathlon.
-    private final Discipline[] disciplinesList = new Discipline[10];
+    private final List<Discipline> disciplinesList = new ArrayList<>(10);
 
     // List of Athletes participating in Tournament.
     private final List<Athlete> athleteList;
@@ -56,16 +57,16 @@ public class Decathlon {
      * standards.
      */
     public final void makeDisciplinesList(){
-        disciplinesList[0] = new HundredMeters();
-        disciplinesList[1] = new LongJump();
-        disciplinesList[2] = new ShotPut();
-        disciplinesList[3] = new HighJump();
-        disciplinesList[4] = new FourHundredMeters();
-        disciplinesList[5] = new OutdoorHurdles();
-        disciplinesList[6] = new DiscusThrow();
-        disciplinesList[7] = new PoleVault();
-        disciplinesList[8] = new JavelinThrow();
-        disciplinesList[9] = new FifteenHundredMeters();
+        disciplinesList.add( new HundredMeters());
+        disciplinesList.add( new LongJump());
+        disciplinesList.add( new ShotPut());
+        disciplinesList.add( new HighJump());
+        disciplinesList.add( new FourHundredMeters());
+        disciplinesList.add( new OutdoorHurdles());
+        disciplinesList.add( new DiscusThrow());
+        disciplinesList.add( new PoleVault());
+        disciplinesList.add( new JavelinThrow());
+        disciplinesList.add( new FifteenHundredMeters());
     }
 
     /**

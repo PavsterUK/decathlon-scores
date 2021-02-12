@@ -60,12 +60,10 @@ public class CSVParser {
      */
     public static List<Athlete> getAthleteList(List<List<String>> athletesCSVData){
         List<Athlete> athleteList = new ArrayList<>();
-        for (List<String> singleAthleteData : athletesCSVData){
-            String athleteName = singleAthleteData.get(0);
-            String[] athleteResults = new String[10];
-            for (int i = 1; i < singleAthleteData.size(); i++){
-                athleteResults[i - 1] = singleAthleteData.get(i);
-            }
+        for (List<String> AthleteData : athletesCSVData){
+            String athleteName = AthleteData.get(0);
+            String[] athleteResults = (AthleteData.subList(1, AthleteData.size()))
+                    .toArray(new String[0]);
             athleteList.add(new Athlete(athleteName, athleteResults));
         }
         return athleteList;

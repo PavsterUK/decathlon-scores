@@ -28,18 +28,18 @@ public class HTMLGenerator {
      * @return [String] HTML table, containing athlete results.
      */
     public static String makeHTMLString(List<Athlete> athleteList){
-        String htmlTempl = "";
+        String htmlTemplate = "";
         try {
-            htmlTempl = new String(Files.readAllBytes(
-                    Paths.get("src/main/java/com/decathlon/utils/template.html").toAbsolutePath()));
+            htmlTemplate = new String(Files.readAllBytes(
+                    Paths.get("src/main/resources/template.html").toAbsolutePath()));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        StringBuilder athleteData = new StringBuilder("");
+        StringBuilder athleteData = new StringBuilder();
         for (Athlete athlete : athleteList){
                 athleteData.append(getTableRow(athlete));
         }
-        return htmlTempl.replace("$addData", athleteData.toString());
+        return htmlTemplate.replace("$addData", athleteData.toString());
     }
 
     /**
