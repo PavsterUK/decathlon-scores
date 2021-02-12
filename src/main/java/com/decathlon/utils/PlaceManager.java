@@ -32,7 +32,7 @@ public class PlaceManager {
                 sharePlaces(athleteList, numOfSame, i);
                 i += numOfSame + 1;
             }else {
-                athleteList.get(i).setPlace( (i + 1) + "");
+                athleteList.get(i).setPlace(String.valueOf(i + 1));
                 i++;
             }
         }
@@ -50,9 +50,9 @@ public class PlaceManager {
         int place = startIndex + 1;
         StringBuilder sharedPlaces = new StringBuilder();
         sharedPlaces.append(place);
-        for (int i = place; i < startIndex + numOfSame + 1; i++) {
-            sharedPlaces.append("-").append(i + 1);
-        }
+        sharedPlaces.append("-");
+        sharedPlaces.append(place + numOfSame);
+
         for (int i = startIndex; i < startIndex + numOfSame + 1; i++) {
             athleteList.get(i).setPlace(sharedPlaces.toString());
         }
