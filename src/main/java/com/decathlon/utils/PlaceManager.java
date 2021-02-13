@@ -48,13 +48,8 @@ public class PlaceManager {
      */
     private static void sharePlaces(List<Athlete> athleteList, int numOfSame, int startIndex){
         int place = startIndex + 1;
-        StringBuilder sharedPlaces = new StringBuilder();
-        sharedPlaces.append(place);
-        sharedPlaces.append("-");
-        sharedPlaces.append(place + numOfSame);
-
         for (int i = startIndex; i < startIndex + numOfSame + 1; i++) {
-            athleteList.get(i).setPlace(sharedPlaces.toString());
+            athleteList.get(i).setPlace(place + "-" + (place + numOfSame));
         }
     }
 
